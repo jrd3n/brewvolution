@@ -1,31 +1,32 @@
 ﻿@model Beervolution.Models.Brew
 
-@{
-    ViewBag.Title = "Delete";
-}
+<style>
+    .icon-size {
+        height: 36%;
+        width: 36%;
+    }
 
-<h2>Delete</h2>
+    .padding-top {
+        padding-top: 20px;
+    }
+</style>
 
-<h3>Are you sure you want to delete this?</h3>
+<div class="row padding-top">
+    <div style="float:left">
+        <h3>Are you sure you want to delete this brew?</h3>
+        <h4></h4>
+    </div>
+    <div style="float:right" class="hidden-xs">
+        <img src="~/Images/barrel-delete-icon.png" title="Delete beer" class="icon-size" />
+    </div>
+</div>
+
 <div>
-    <h4>Brew</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.StartingGravity)
+            @Html.DisplayNameFor(model => model.Description)
         </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StartingGravity)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.FinalGravity)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.FinalGravity)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.StartDate)
@@ -43,22 +44,34 @@
             @Html.DisplayFor(model => model.BottleDate)
         </dd>
 
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
         <dt>
-            @Html.DisplayNameFor(model => model.SecondaryFermentationDate)
+            @Html.DisplayNameFor(model => model.StartingGravity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.SecondaryFermentationDate)
+            @Html.DisplayFor(model => model.StartingGravity)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.FinalGravity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FinalGravity)
+        </dd>
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-        <div class="form-actions no-color">
+        <div class="form-actions text-center">
             <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
         </div>
     }
 </div>

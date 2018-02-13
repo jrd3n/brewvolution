@@ -13,11 +13,9 @@ namespace Beervolution.Models
 
         public string Name { get; set; }
 
-        [Display(Name = "Email Address")]
-        public string EmailAddress { get; set; }
+        public string SID { get; set; }
 
-        [Display(Name = "Facebook User ID")]
-        public string FacebookUser { get; set; }
+        public List<Brew> Brews { get; set; }
 
         [Display(Name = "Permission Group")]
         public Group PermissionGroup { get; set; }
